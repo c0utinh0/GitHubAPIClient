@@ -11,7 +11,13 @@ import { NavComponent } from './components/template/nav/nav.component'
 import { MatSidenavModule } from '@angular/material/sidenav'
 import { MatListModule } from '@angular/material/list';
 import { HomeComponent } from './components/views/home/home.component';
-import { UsuariosComponent } from './components/views/usuarios/usuarios.component'
+import { UserComponent } from './components/views/user/user.component';
+import { HttpClientModule } from '@angular/common/http';
+import { UsersReadComponent } from './components/views/user/users-read/users-read.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 
 
 
@@ -22,7 +28,9 @@ import { UsuariosComponent } from './components/views/usuarios/usuarios.componen
     FooterComponent,
     NavComponent,
     HomeComponent,
-    UsuariosComponent
+    UserComponent,
+    UsersReadComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -31,7 +39,11 @@ import { UsuariosComponent } from './components/views/usuarios/usuarios.componen
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
