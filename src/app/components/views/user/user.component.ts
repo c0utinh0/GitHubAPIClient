@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class UserComponent implements OnInit {
 
   users: User[] = [];
+  displayedColumns = ['id', 'login', 'details'];
   
 
   constructor( private userService: UserService) { }

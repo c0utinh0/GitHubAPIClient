@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from './user.model';
+import { User, UserDetails, UserRepos } from './user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,13 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl)
   }
 
-
+  details(login: string): Observable<UserDetails> {
+    const url = `${this.apiUrl}/${login}`
+    return this.http.get<UserDetails>(url)
+  }  
+  
+  repos(login: string): Observable<UserRepos[]> {
+    const url = `${this.apiUrl}/${login}/repos`
+    return this.http.get<UserRepos[]>(url)
+  }
 }
